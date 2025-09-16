@@ -1,0 +1,26 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+// Spring Boot 애플리케이션은 bootJar 활성화, 일반 jar 비활성화
+tasks.withType(Jar) {
+    enabled = name == "bootJar"
+}
+
+dependencies {
+    implementation project(':module-common')
+    implementation project(':module-db')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework:spring-tx'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}
