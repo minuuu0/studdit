@@ -8,7 +8,6 @@
 - [프로젝트 소개](#-프로젝트-소개)
 - [주요 기능](#-주요-기능)
 - [기술 스택](#-기술-스택)
-- [프로젝트 구조](#-프로젝트-구조)
 - [시스템 아키텍처](#-시스템-아키텍처)
 - [시작하기](#-시작하기)
 - [API 명세](#-api-명세)
@@ -24,6 +23,8 @@ Studdit은 효과적인 학습 습관 형성을 도와주는 학습 관리 시�
 - **효율적 복습**: 망각곡선 기반 자동 복습 일정 생성
 - **학습 추적**: 상세한 학습 시간 및 통계 제공
 - **인증 시스템**: 학습 자료 업로드를 통한 학습 인증
+
+---
 
 ## ✨ 주요 기능
 
@@ -44,6 +45,8 @@ Studdit은 효과적인 학습 습관 형성을 도와주는 학습 관리 시�
 ### 🔄 복습 관리
 - **자동 복습 생성**: 망각곡선 기반 복습 일정 자동 설정
 - **복습 완료 추적**: 복습 진행 상황 모니터링
+
+---
 
 ## 🛠 기술 스택
 
@@ -66,39 +69,16 @@ Studdit은 효과적인 학습 습관 형성을 도와주는 학습 관리 시�
 - **JUnit 5** - 단위 테스트
 - **Spring Boot Test** - 통합 테스트
 
-## 🏗 프로젝트 구조
-
-```
-studdit/
-├── module-application/     # 애플리케이션 계층
-│   ├── controller/ 
-│   ├── service/
-│   ├── request/ 
-│   └── response/  
-├── module-db/             # 데이터 접근 계층
-│   ├── entity/ 
-│   └── repository/
-├── module-common/         # 공통 모듈
-│   └── ApiResponse.java
-├── module-internal/       # 내부 서비스 모듈
-└── module-independant/    # 독립 실행 모듈
-```
-
-### 주요 도메인
-- **Schedule**: 학습 일정 관리 (단일 일정)
-- **RecurringSchedule**: 반복 일정 관리
-- **Review**: 복습 일정 관리
-- **Tracking**: 학습 시간 추적
+---
 
 ## 🏛 시스템 아키텍처
 
 ### 전체 시스템 구조
-![img_2.png](img_2.png)
+![전체 시스템 구조](img_2.png)
 <br>
 
 ### 서비스 시나리오
-![img.png](img.png)
-
+![서비스 시나리오](img.png)
 
 ### 계층별 설명
 
@@ -122,6 +102,8 @@ studdit/
 - 외부 시스템 연동
 - JPA 엔티티 매핑
 
+---
+
 ## 🚀 시작하기
 
 ### 사전 요구사항
@@ -130,33 +112,35 @@ studdit/
 
 ### 실행 방법
 
-1. **리포지토리 클론**
-```bash
-git clone [repository-url]
-cd studdit
-```
+1.  **리포지토리 클론**
+    ```bash
+    git clone [repository-url]
+    cd studdit
+    ```
 
-2. **Docker로 실행**
-```bash
-docker-compose up -d
-```
+2.  **Docker로 실행**
+    ```bash
+    docker-compose up -d
+    ```
 
-3. **서비스 확인**
-- Backend API: http://localhost:8080
-- MySQL: localhost:3306
+3.  **서비스 확인**
+    - Backend API: http://localhost:8080
+    - MySQL: localhost:3306
 
 ### 로컬 개발 환경 설정
 
-1. **데이터베이스 설정**
-```bash
-# MySQL 실행 (Docker 사용)
-docker-compose up db -d
-```
+1.  **데이터베이스 설정**
+    ```bash
+    # MySQL 실행 (Docker 사용)
+    docker-compose up db -d
+    ```
 
-2. **애플리케이션 실행**
-```bash
-./gradlew :module-application:bootRun
-```
+2.  **애플리케이션 실행**
+    ```bash
+    ./gradlew :module-application:bootRun
+    ```
+
+---
 
 ## 📚 API 명세
 
@@ -181,6 +165,7 @@ docker-compose up db -d
 - `PUT /api/tracking/{id}/pause` - 학습 일시정지
 - `PUT /api/tracking/{id}/complete` - 학습 완료
 
+---
 
 ## 💡 개발 과정
 
@@ -207,8 +192,6 @@ docker-compose up db -d
 - 확장 가능성을 고려한 미래 지향적 설계
 - 각 계층의 명확한 역할 분담
 - 팀 협업 시 모듈별 독립적 개발 가능
-
-
 
 ### 🔍 기술적 도전과 학습
 
@@ -241,7 +224,4 @@ docker-compose up db -d
 - 발생한 문제와 해결 방법
 - 코드 리뷰 및 리팩토링 과정
 
-![img_3.png](img_3.png)
-#   s t u d d i t 
- 
- 
+![Notion 기록 예시](img_3.png)
